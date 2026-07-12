@@ -270,13 +270,25 @@ h1 {
 }
 
 .schedule-item {
+  --row-bg: var(--white);
+
   display: grid;
   grid-template-columns: 1fr;
 }
 
+.schedule-item:nth-child(4n+1),
+.schedule-item:nth-child(4n+2) {
+  --row-bg: #f8fbff;
+}
+
+.schedule-item:nth-child(4n+3),
+.schedule-item:nth-child(4n+4) {
+  --row-bg: var(--white);
+}
+
 .schedule-time {
   align-items: center;
-  background: var(--paper);
+  background: var(--row-bg);
   border-bottom: 1px solid var(--line);
   color: var(--navy);
   display: flex;
@@ -288,19 +300,11 @@ h1 {
 }
 
 .schedule-card {
-  background: var(--white);
+  background: var(--row-bg);
   border-bottom: 1px solid var(--line);
   border-left: 0;
   min-width: 0;
   padding: 0.95rem 1rem;
-}
-
-.schedule-item:nth-child(odd) .schedule-card {
-  background: #f8fbff;
-}
-
-.schedule-item--meal .schedule-card {
-  background: #fffaf0;
 }
 
 .schedule-card h3 {

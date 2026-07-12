@@ -13,15 +13,16 @@ Reasons:
 - Better navigation: users land directly on the schedule instead of opening Google Drive or a PDF viewer.
 - Still print-safe: the original 11 x 17 PDF is included as a direct download.
 
-Do not maintain a separate PDF-only branch unless a hosting provider requires it. Keeping the HTML, PDF, DOCX, and artwork in one static repo is simpler and less error-prone.
+Do not maintain a separate PDF-only branch unless a hosting provider requires it. Keeping the HTML, poster PDF, source DOCX, and artwork in one static repo is simpler and less error-prone. The public page links only to the PDF because family members do not need the editable Word file.
 
 ## Files
 
 - `index.html`: primary web schedule.
 - `styles.css`: responsive and print-aware styling.
 - `assets/whiteley-reunion-2026-schedule.pdf`: poster PDF download.
-- `assets/whiteley-reunion-2026-schedule.docx`: editable Word document download.
-- `assets/whiteley-deep-roots-transparent.png`: transparent family-tree artwork.
+- `assets/whiteley-reunion-2026-schedule.docx`: editable Word source retained in the repo.
+- `assets/whiteley-deep-roots-full-1400.webp`: optimized web artwork.
+- `assets/whiteley-deep-roots-full-1400.png`: PNG fallback artwork.
 
 ## Local Preview
 

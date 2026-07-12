@@ -48,7 +48,8 @@ a {
 
 .hero,
 main,
-.site-footer {
+.site-footer,
+.downloads--bottom {
   margin-inline: auto;
   max-width: 1180px;
   width: min(100% - 32px, 1180px);
@@ -57,9 +58,10 @@ main,
 .hero {
   align-items: center;
   display: grid;
-  gap: clamp(1rem, 3vw, 3rem);
-  grid-template-columns: minmax(0, 1fr) minmax(150px, 230px);
-  padding: clamp(2rem, 5vw, 4.5rem) 0 1.25rem;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  padding: 1.5rem 0 1rem;
+  text-align: center;
 }
 
 .hero__copy {
@@ -73,7 +75,7 @@ main,
   font-size: clamp(0.95rem, 1.5vw, 1.2rem);
   font-weight: 700;
   letter-spacing: 0;
-  margin: 0 0 0.45rem;
+  margin: 0;
 }
 
 h1,
@@ -87,7 +89,7 @@ h1 {
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(2.65rem, 7vw, 5.3rem);
   line-height: 0.95;
-  margin-bottom: 0.55rem;
+  margin-bottom: 0.45rem;
   text-transform: uppercase;
 }
 
@@ -101,9 +103,9 @@ h1 {
 .hero__image {
   filter: drop-shadow(0 18px 26px rgba(0, 0, 0, 0.24));
   height: auto;
-  justify-self: end;
+  justify-self: center;
   max-width: 100%;
-  width: min(230px, 28vw);
+  width: min(310px, 82vw);
 }
 
 .overview,
@@ -136,10 +138,10 @@ h1 {
 .timeline {
   display: grid;
   gap: 0;
-  grid-template-columns: minmax(0, 1fr) 72px minmax(0, 1fr) 72px minmax(0, 1fr);
+  grid-template-columns: 1fr;
   list-style: none;
   margin: 0;
-  padding: 0 1.25rem 1.25rem;
+  padding: 0 1rem 0.75rem;
 }
 
 .timeline li {
@@ -175,17 +177,39 @@ h1 {
   background: var(--gold);
   border-color: var(--gold);
   color: var(--navy);
-  font-size: clamp(1.9rem, 4vw, 2.7rem);
+  font-size: 0;
   font-weight: 900;
+  min-height: 38px;
+  padding: 0;
+}
+
+.timeline .timeline__arrow::before {
+  content: "↓";
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.overview__summary {
+  color: var(--muted);
+  font-size: clamp(1rem, 1.8vw, 1.18rem);
+  font-weight: 700;
+  margin: 0;
+  padding: 0 1.25rem 1.25rem;
+  text-align: center;
 }
 
 .downloads {
-  align-items: center;
+  align-items: stretch;
   display: flex;
+  flex-direction: column;
   gap: 1.5rem;
   justify-content: space-between;
   margin-top: 1.25rem;
   padding: 1.25rem;
+}
+
+.downloads--bottom {
+  margin-block: 2.75rem 2.5rem;
 }
 
 .downloads p {
@@ -197,7 +221,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  justify-content: flex-end;
+  justify-content: stretch;
 }
 
 .button {
@@ -205,9 +229,11 @@ h1 {
   color: var(--navy);
   display: inline-flex;
   font-weight: 800;
+  justify-content: center;
   min-height: 44px;
   padding: 0.7rem 1rem;
   text-decoration: none;
+  width: 100%;
 }
 
 .button--primary {
@@ -245,7 +271,7 @@ h1 {
 
 .schedule-item {
   display: grid;
-  grid-template-columns: minmax(8.5rem, 0.35fr) minmax(0, 1fr);
+  grid-template-columns: 1fr;
 }
 
 .schedule-time {
@@ -256,15 +282,15 @@ h1 {
   display: flex;
   font-size: clamp(1.25rem, 2.2vw, 1.8rem);
   font-weight: 900;
-  justify-content: center;
-  padding: 1rem;
+  justify-content: flex-start;
+  padding: 0.75rem 1rem;
   text-align: center;
 }
 
 .schedule-card {
   background: var(--white);
   border-bottom: 1px solid var(--line);
-  border-left: 1px solid var(--line);
+  border-left: 0;
   min-width: 0;
   padding: 0.95rem 1rem;
 }
@@ -300,7 +326,7 @@ h1 {
   color: var(--white);
   font-size: clamp(1rem, 2vw, 1.3rem);
   font-weight: 800;
-  padding: 0 0 2.5rem;
+  padding: 0 0 0.25rem;
   text-align: center;
 }
 
@@ -308,52 +334,58 @@ h1 {
   margin-bottom: 0;
 }
 
-@media (max-width: 760px) {
+@media (min-width: 760px) {
   .hero {
-    grid-template-columns: 1fr;
-    padding-top: 2rem;
-    text-align: center;
+    gap: clamp(1rem, 3vw, 3rem);
+    grid-template-columns: minmax(0, 1fr) minmax(190px, 300px);
+    padding: clamp(2rem, 5vw, 4.5rem) 0 1.25rem;
   }
 
   .hero__image {
-    justify-self: center;
-    width: min(210px, 54vw);
+    justify-self: end;
+    width: min(300px, 28vw);
   }
 
   .timeline {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr) 72px minmax(0, 1fr) 72px minmax(0, 1fr);
+    padding: 0 1.25rem 0.75rem;
   }
 
   .timeline .timeline__arrow {
-    min-height: 44px;
-    padding: 0.25rem;
+    font-size: 0;
+    min-height: 86px;
+    padding: 0.8rem 1rem;
+  }
+
+  .timeline .timeline__arrow::before {
+    content: "→";
+    font-size: clamp(1.9rem, 4vw, 2.7rem);
   }
 
   .downloads {
-    align-items: stretch;
-    flex-direction: column;
+    align-items: center;
+    flex-direction: row;
   }
 
   .downloads__actions {
-    justify-content: stretch;
+    justify-content: flex-end;
   }
 
   .button {
-    justify-content: center;
-    width: 100%;
+    width: auto;
   }
 
   .schedule-item {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(8.5rem, 0.35fr) minmax(0, 1fr);
   }
 
   .schedule-time {
-    justify-content: flex-start;
-    padding: 0.75rem 1rem;
+    justify-content: center;
+    padding: 1rem;
   }
 
   .schedule-card {
-    border-left: 0;
+    border-left: 1px solid var(--line);
   }
 }
 

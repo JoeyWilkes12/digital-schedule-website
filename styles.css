@@ -276,14 +276,24 @@ h1 {
   grid-template-columns: 1fr;
 }
 
-.schedule-item:nth-child(4n+1),
-.schedule-item:nth-child(4n+2) {
+.schedule-item:nth-child(odd) {
   --row-bg: #f8fbff;
 }
 
-.schedule-item:nth-child(4n+3),
-.schedule-item:nth-child(4n+4) {
+.schedule-item:nth-child(even) {
   --row-bg: var(--white);
+}
+
+.schedule-item:nth-child(6) {
+  --row-bg: #f8fbff;
+}
+
+.schedule-item:nth-child(n+7):nth-child(odd) {
+  --row-bg: var(--white);
+}
+
+.schedule-item:nth-child(n+8):nth-child(even) {
+  --row-bg: #f8fbff;
 }
 
 .schedule-time {
